@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+
+
+
+<main class="main">
+    <div class="container" style="background-color:rgb(255, 255, 255); margin-top: 20px; border-radius: 10px;">    
+        
+        <div class="card-group">
+            {% for proyecto in proyectos %}
+
+            <div class="card m-2" id="card">
+              <img src="{{proyecto.imagen.url}}" >
+
+              <div class="card-body">
+                <h5 class="card-title">{{proyecto.titulo}}</h5>
+                <p class="card-text">{{proyecto.descripcion}}</p>
+              </div>
+              <div class="card-footer" style="text-align: center;">
+                {% if proyecto.url %}
+                <small class="text-muted"><a class="btn btn-dark" href="{{proyecto.url}}">Ir al sitio</a>
+                </small>
+                {% else %}
+                <small class="text-muted" ><a href="" class="btn btn-primary">Ver mas</a></small>
+                {% endif %}
+              </div>
+            
+            
+          </div>
+          {% endfor %}
+
+    </div>
+    <br>
+  </main>
+  
+
+{% endblock %}

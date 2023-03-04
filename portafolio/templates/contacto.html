@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+
+<main style="background-color: rgb(8, 8, 68);"class="container">
+    <br>
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <form method="POST" class="card card-body">
+
+                <h1 style="text-align: center;">Contactar</h1>
+                <br>
+            
+                {{mensaje}}
+                {% csrf_token %}
+                
+                <div class="mb-3">
+                    <input type="text" name="nombre" class="form-control" placeholder="Escriba su nombre" id="nombre">
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="apellido" class="form-control" placeholder="Escriba su apellido" id="apellido">
+                </div>
+                <div class="mb-3">
+                    <input type="email" name="email" class="form-control" placeholder="Escriba su email" id="email">
+                </div>
+                <div class="mb-3">
+                    <textarea name="mensaje" id="mensaje" cols="30" rows="10" class="form-control" placeholder="Escriba su mensaje"></textarea>
+                </div>
+            
+                <button class="btn btn-dark">
+                    Enviar
+                </button>
+            </form>
+        </div>
+    </div>
+    <br>
+</main>
+
+{% endblock %}
